@@ -4,50 +4,66 @@ function computerPlay() {
   return hand;
 }
 
-function playerSelect() {
-  let hand = prompt("Choose your fighter (rock, paper, scissors)");
-  hand = hand.toLowerCase();
-  return hand;
-}
-
-function versus() {
+function versus(player) {
   const computer = computerPlay();
-  const player = playerSelect();
 
   if (computer == player) {
-    return 0;
+    return;
   } else if (player == "scissors" && computer == "rock") {
-    return -1;
+    game(-1);
   } else if (player == "scissors" && computer == "paper") {
-    return 1;
+    game(1);
   } else if (player == "rock" && computer == "scissors") {
-    return 1;
+    game(1);
   } else if (player == "rock" && computer == "paper") {
-    return -1;
+    game(-1);
   } else if (player == "paper" && computer == "scissors") {
-    return -1;
+    game(-1);
   } else if (player == "paper" && computer == "rock") {
-    return 1;
+    game(1);
   }
 }
 
-function game() {
-  let computer = 0;
-  let player = 0;
+function game(game) {
+  const player = document.getElementById("player");
+  const computer = document.getElementById("computer");
+  const result = document.getElementById("result");
 
-  while (player < 3 && computer < 3) {
-    let game = versus();
-    if (game == 1) {
-      player++;
-    } else if (game == -1) {
-      computer++;
-    }
-    alert("Player: " + player + " Computer: " + computer);
+  if (game == 1) {
+    player.innerHTML = parseInt(player.innerHTML) + 1;
+  } else {
+    computer.innerHTML = parseInt(computer.innerHTML) + 1;
   }
 
-  alert(
-    player > computer
-      ? "You won!\n" + " Player: " + player + " Computer: " + computer
-      : "You lost :( \n" + " Player: " + player + " Computer: " + computer
-  );
+  if (parseInt(player.innerHTML) == 5) {
+    result.innerHTML = "You Won!";
+    removeEventListeners();
+    document.getElementById("btn-restart").classList.remove("hidden");
+  } else if (parseInt(computer.innerHTML) == 5) {
+    result.innerHTML = "You Lost :(";
+    removeEventListeners();
+    document.getElementById("btn-restart").classList.remove("hidden");
+  }
 }
+
+function removeEventListeners() {
+  const rock = document.getElementById("rock");
+  const paper = document.getElementById("paper");
+  const scissors = document.getElementById("scissors");
+
+  const rock1 = rock.cloneNode(true);
+  const paper1 = paper.cloneNode(true);
+  const scissors1 = scissors.cloneNode(true);
+
+  rock.parentNode.replaceChild(rock1, rock);
+  paper.parentNode.replaceChild(paper1, paper);
+  scissors.parentNode.replaceChild(scissors1, scissors);
+}
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+rock.addEventListener("click", () => versus("rock"));
+paper.addEventListener("click", () => versus("paper"));
+scissors.addEventListener("click", () => versus("scissors"));

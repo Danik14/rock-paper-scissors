@@ -51,13 +51,14 @@ body {
 
 .game-info {
   margin-top: 20px;
-  font-size: 30px;
+  font-size: 20px;
   color: chartreuse;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
 }
 
+h1,
 h2 {
   margin: 0;
   padding: 0;
@@ -70,8 +71,28 @@ h2 {
 }
 
 .score {
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   width: 100vh;
   justify-content: space-around;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+#result {
+  color: chartreuse;
+}
+
+.btn-restart {
+  margin-top: 20px;
+  width: 7em;
+  height: 3em;
+}
+
+.hidden {
+  display: none;
 }

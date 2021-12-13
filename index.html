@@ -9,21 +9,34 @@
   </head>
   <body>
     <header class="header"><p>ROCK vs PAPER vs SCISSORS</p></header>
-      <div class="buttons">
-        <button class="btn">Rock</button>
-        <button class="btn">Paper</button>
-        <button class="btn">Scissors</button>
-      </div>
+    <div class="buttons">
+      <button id="rock" class="btn">Rock</button>
+      <button id="paper" class="btn">Paper</button>
+      <button id="scissors" class="btn">Scissors</button>
+    </div>
 
-      <div class="game-info">
-        <div class="man-comp">
-          <h2>You</h2>
-          <h2>Computer</h2>
-        </div>
-        <div class="score">
-          <h2>0</h2>
-          <h2>0</h2>
-        </div>
+    <div class="game-info">
+      <div class="man-comp">
+        <h2>You</h2>
+        <h2>Computer</h2>
       </div>
+      <div class="score">
+        <h2 id="player">0</h2>
+        <h2 id="computer">0</h2>
+      </div>
+    </div>
 
-  </html>
+    <footer class="footer">
+      <h1 id="result"></h1>
+      <button
+        id="btn-restart"
+        onclick="document.location.reload()"
+        class="btn btn-restart hidden"
+      >
+        RESTART
+      </button>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
