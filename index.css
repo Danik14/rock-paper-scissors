@@ -11,53 +11,67 @@ html {
 }
 
 body {
-  color: #fff;
   background: #17181c;
   font: 300 1em "Fira Sans", sans-serif;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
 }
 
-.wrapper {
+.header {
+  color: chartreuse;
+  font-size: 70px;
   display: flex;
   flex-flow: row wrap;
-  height: 100vh;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  height: 35vh;
   justify-content: center;
   align-items: center;
 }
 
-.raise:hover,
-.raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 1px;
 }
 
-.raise {
-  font-size: 50px;
-  --color: #ffa260;
-  --hover: #e5ff60;
-}
-
-button {
-  color: var(--color);
-  transition: 0.25s;
-}
-
-button {
+.btn {
+  font-size: 30px;
+  width: 6em;
+  height: 6em;
+  padding: 20px;
+  color: chartreuse;
+  border: 2px solid gold;
   background: none;
-  border: 2px solid;
-  font: inherit;
-  line-height: 1;
-  margin: 0.5em;
-  padding: 1em 2em;
+  margin: 0 30px;
+  transition: all 0.4s ease;
 }
 
-button:hover,
-button:focus {
-  border-color: var(--hover);
-  color: #fff;
+.game-info {
+  margin-top: 20px;
+  font-size: 30px;
+  color: chartreuse;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.man-comp {
+  display: flex;
+  width: 100vh;
+  justify-content: space-around;
+}
+
+.score {
+  margin-top: 50px;
+  display: flex;
+  width: 100vh;
+  justify-content: space-around;
 }

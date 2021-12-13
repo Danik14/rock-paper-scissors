@@ -51,8 +51,3 @@ function game() {
       : "You lost :( \n" + " Player: " + player + " Computer: " + computer
   );
 }
-
-const button = document.querySelector(".raise");
-button.addEventListener("click", (e) => {
-  e.target.remove();
-});
